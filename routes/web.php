@@ -23,8 +23,10 @@ require __DIR__.'/auth.php';
 
 //Rota Admin
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])
-->middleware('auth')->name('admin.dashboard');
+->middleware(['auth', 'admin'])
+->name('admin.dashboard');
 
 //Rota Vendedor
 Route::get('vendor/dashboard', [VendorController::class, 'dashboard'])
-->middleware('auth')->name('vendor.dashboard');
+->middleware(['auth', 'vendor'])
+->name('vendor.dashboard');
