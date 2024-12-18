@@ -12,7 +12,7 @@
     <p>{{ Auth::user()->name }}</p>
 
     <p>Estou logado como vendedor</p>
-    
+
     <x-dropdown-link :href="route('profile.edit')">
         {{ __('Profile') }}
     </x-dropdown-link>
