@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -38,51 +41,34 @@
             </div>
 
             <div class="card card-primary" style="background: #BC0605; border:none; color:#fff">
-              <div class="card-header"><h4>Acesso Administrativo</h4></div>
+              <div class="card-header"><h4>Recuperar Senha</h4></div>
+                <br>
+              @if (session('status'))
+                <p class="alert alert-warning">Foi enviado um link em seu email, para recuperar sua senha.</p>
+              @endif
 
               <div class="card-body">
-                <form method="post" action="{{ route('login') }}" class="needs-validation" novalidate="">
+                <form method="post" action="{{ route('password.email') }}" class="needs-validation" novalidate="">
                     @csrf
                   <div class="form-group">
 
                     <input id="email" type="email" class="form-control" name="email" placeholder="Email de acesso" tabindex="1" value="{{ old('email') }}" required autofocus>
-                    @if ($errors->has('email'))
-                        <code>{{ $errors->firts('email') }}</code>
+                    @if ($errors->get('email'))
+                        <code>{{ $errors->first('email') }}</code>
                     @endif
 
-                  </div>
-
-                  <div class="form-group">
-                    <div class="d-block">
-
-                      <div class="float-right">
-                        @if (Route::has('admin.forgot'))
-                        <a href="{{ route('admin.forgot') }}" class="text-small" style="color:#fff">
-                          Esqueceu sua Senha?
-                        </a>
-                        @endif
-                      </div>
-                    </div>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Sua Senha de acesso" tabindex="2" value="{{ old('password') }}" required>
-
-                    @if ($errors->has('password'))
-                        <code>{{ $errors->firts('password') }}</code>
-                    @endif
-
-                  </div>
-
-                  <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                      <label class="custom-control-label" for="remember-me">Me Lembre</label>
-                    </div>
                   </div>
 
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4" style="background: #6d6d6d; color:black;">
-                      Entrar
+                      Recuperar
                     </button>
                   </div>
+
+                <p style="text-align: center;">
+                    <a href="{{ route('admin.login') }}" title="Voltar para o login"style="color:black" >Voltar ao Login</a>
+                </p>
+
                 </form>
 
 
