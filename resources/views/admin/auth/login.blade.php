@@ -47,7 +47,7 @@
 
                     <input id="email" type="email" class="form-control" name="email" placeholder="Email de acesso" tabindex="1" value="{{ old('email') }}" required autofocus>
                     @if ($errors->has('email'))
-                        <code>{{ $errors->firts('email') }}</code>
+                        <code>{{ $errors->first('email') }}</code>
                     @endif
 
                   </div>
@@ -66,7 +66,7 @@
                     <input id="password" type="password" class="form-control" name="password" placeholder="Sua Senha de acesso" tabindex="2" value="{{ old('password') }}" required>
 
                     @if ($errors->has('password'))
-                        <code>{{ $errors->firts('password') }}</code>
+                        <code>{{ $errors->first('password') }}</code>
                     @endif
 
                   </div>

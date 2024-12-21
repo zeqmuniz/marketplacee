@@ -18,3 +18,8 @@ Route::get('admin/profile', [ProfileController::class, 'index'])
 Route::post('admin/profile/update', [ProfileController::class, 'update'])
 ->middleware(['auth', 'admin'])
 ->name('admin.profile.update');
+
+//Rota para atualizar senha do perfil administrador
+Route::post('admin/profile/update/password', [ProfileController::class, 'updatePassword'])
+->middleware(['auth', 'admin'])
+->name('admin.profile.password');
