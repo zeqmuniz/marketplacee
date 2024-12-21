@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            
+
             <h1>Meus Dados</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard') }}">Painel</a></div>
@@ -15,11 +15,6 @@
 
                 {{-- INICIO BLOCO 1 --}}
                 <div class="col-12 col-md-12 col-lg-7">
-
-                    @if (session('success'))
-                        <div class="alert alert-success">{{ session('success') }} </div>
-                    @endif
-
                     <div class="card">
                         <form action="{{ route('admin.profile.update') }}" method="post" class="needs-validation"
                             novalidate="" enctype="multipart/form-data">
@@ -78,16 +73,6 @@
 
 {{-- INICIO BLOCO 2 --}}
 <div class="col-12 col-md-12 col-lg-7">
-@if ($errors->any())
-@foreach ($errors->all() as $error )
-<div class="alert alert-danger">{{ $error }} </div>
-@endforeach
-@endif
-
-@if (session('successSenha'))
-<div class="alert alert-success">{{ session('successSenha') }} </div>
-@endif
-
 <div class="card">
 <form action="{{ route('admin.profile.password') }}" method="post" class="needs-validation"
 novalidate="" enctype="multipart/form-data">
