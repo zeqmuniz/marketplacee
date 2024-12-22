@@ -15,7 +15,7 @@
 
                 {{-- INICIO BLOCO 1 --}}
                 <div class="col-12 col-md-12 col-lg-7">
-                    <div class="card">
+                    <div class="card" style="background: #6d6d6d; color:black">
                         <form action="{{ route('admin.profile.update') }}" method="post" class="needs-validation"
                             novalidate="" enctype="multipart/form-data">
                             @csrf
@@ -73,7 +73,7 @@
 
 {{-- INICIO BLOCO 2 --}}
 <div class="col-12 col-md-12 col-lg-7">
-<div class="card">
+<div class="card" style="background: #6d6d6d; color:black">
 <form action="{{ route('admin.profile.password') }}" method="post" class="needs-validation"
 novalidate="" enctype="multipart/form-data">
 @csrf
